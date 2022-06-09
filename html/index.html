@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+  <title>Document</title>
+  <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      html,body{
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 62.5%;
+      }
+      body{
+        overflow: hidden;
+        display: flex;
+        background-color: #18184a;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+      #drag, #spin{
+        position: relative;
+        display: flex;
+        margin: auto;
+        transform-style: preserve-3d;
+      }
+      #drag img{
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        text-align: center;
+      }
+      #ground{
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotateX(90deg);
+      }
+      @keyframes spin{
+        from{
+          transform: rotateY(0deg);
+        }
+        to{
+          transform: rotateY(360deg);
+        }
+      }
+      @keyframes spinRevert{
+        from{
+          transform: rotateY(360deg);
+        }
+        to{
+          transform: rotateY(0deg);
+        }
+      }
+      @keyframes fadeout{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+      }
+  </style>
+</head>
+<body>
+    <div style="position: fixed; top: 10px; width: 100%; height: 50px; line-height: 50px; font-family: 'Helvetica 25 UltraLight', sans-serif;">
+      <div style="width: 1200px; margin: auto; display: flex; justify-content: space-between; font-size: 1.6rem; animation: fadeout linear 1.6s;">
+        <div style="display: flex;justify-content: space-between;width: 124px;">
+          <a style=" text-decoration: none; color: #0BFF65;" id="hometitle" href="/html/work.html">WORK</a>
+          <a style=" text-decoration: none; color: #0BFF65;" id="hometitle" href="/html/news.html">NEWS</a>
+        </div>
+        <a href="/html/index.html"><img style="width: 100px; height: 70px;" src="/images/Not Today logotype -01.png"></a>
+        <a style=" text-decoration: none; color: #0BFF65;" id="hometitle" href="/html/about.html">ABOUT</a>
+      </div>
+    </div>
+    <div id="drag">
+        <div id="spin">
+          <img src="/images/0bbbd7c301990cd399f425d606e8cd17.jpg" alt="">
+          <img src="/images/57b8d9347f4e0f5a2aed98eb23aa4819.jpg" alt="">
+          <img src="/images/Screen_Shot_2021-06-09_at_10.20.38_AM.png" alt="">
+          <img src="/images/IMG_0092.jpg" alt="">
+          <img src="/images/IMG_1346.jpg" alt="">
+        </div>
+    </div>
+    <div id="ground"></div>
+
+  <script>
+      var hometitle = document.querySelectorAll('#hometitle');
+      hometitle.forEach((x)=>{
+          x.addEventListener('mouseover',()=>{
+            x.style.color = '#F5009B';
+          })
+          x.addEventListener('mouseout',()=>{
+            x.style.color = '#0BFF65';
+          })
+      })
+        var radius = 280;
+        var autoRotate = true;
+        var rotateSpeed = -60;
+        var imgWidth = 300;
+        var imgHeight = 360;
+
+
+        setTimeout(init, 1000);
+
+        var odrag = document.getElementById('drag');
+        var ospin = document.getElementById('spin');
+        var aImg = ospin.getElementsByTagName('img');
+        var aEle = [...aImg];
+
+        ospin.style.width = imgWidth + 'px';
+        ospin.style.height = imgHeight + 'px';
+
+        var ground = document.getElementById('ground');
+        ground.style.width = 0 + 'px';
+        ground.style.height = radius * 3 + 'px';
+
+        function init(delayTime){
+            for (let i = 0; i < aEle.length; i++) {
+              aEle[i].style.transform = 'rotateY(' + (i*(360/aEle.length)) + 'deg)translateZ(' + radius + 'px)';
+              aEle[i].style.transition = 'transform 1s';
+              aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + 's'
+              
+            }
+        }
+
+        function applyTransform(obj){
+          if(tY >100) tY = 100;
+          if(tY <0) tY = 0;
+
+          obj.style.transform = 'rotateY(' + (tX) + 'deg)';
+        }
+        function playSpin(yes)
+        {
+          ospin.style.animationPlayState = (yes? 'running': 'pause')
+        }
+        var sX,sY,nX,nY,desX = 0, desY = 0, tX = 0, tY = 10;
+        if(autoRotate){
+          var animatitonName = (rotateSpeed>0 ? 'spin' : 'spinRevert');
+          ospin.style.animation = `${animatitonName} ${Math.abs(rotateSpeed)}s infinite linear`;
+        }
+        document.onpointerdown = function(e){
+          e = e || window.event;
+          var sX = e.clientX;
+          var sY = e.clientY;
+      
+        this.onpointermove = function(e){
+            e = e || window.event;
+            var nX = e.clientX;
+                nY = e.clientY;
+
+
+                desX = nX - sX;
+                desY = nY - sY;
+                tX += desX * 0.1;
+                tY += desY * 0.1;
+
+                applyTransform(odrag);
+
+                sX = nX;
+                sY = nY;
+        }
+
+        this.onpointerup = function(e){
+          odrag.timer = setInterval(function (){
+            desX *= 0.95;
+            desY *= 0.95;
+            tX += desX * 0.1;
+            tY += desY * 0.1;
+
+            applyTransform(odrag);
+
+            playSpin(false);
+
+            if(Math.abs(desX) <0.5 && Math.abs(desY)<0.5){
+              clearInterval(odrag.timer);
+              playSpin(true);
+            }
+          }, 17);
+          this.onpointermove = this.onpointerup = null;
+        }
+        return false;
+        };
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="circularcursor"></div>
+    <div class="appAbout">
+        <div class="navAbout grid wide">
+            <a href="/html/index.html" class="closenewdetails navAbout-icon-active"><img class="closenewdetailsImg" src="/images/Group 25.png"></a>
+            <h1 class="nav-title"><a href="" class="nav-title-textAbout textAbout-1">WORK</a></h1>
+            <h1 class="nav-title"><a href="" class="nav-title-textAbout textAbout-2">ABOUT</a></h1>
+        </div>
+        <div class="bannerAbout">
+            <div class="bannerAbout-hold">
+                <div class="bannerAbout-hold-img">
+                    <img src="/images/Group 28.png" alt="" srcset="">
+                </div>
+                <div class="bannerAbout-hold-text">
+                    <h2 class="bannerAbout-hold-text-title">HOW ABOUT</h2>
+                    <img class="bannerAbout-hold-text-image" src="/images/Group 29.png" alt="" srcset="">
+                    <div class="bannerAbout-hold-text-detail-hold">
+                        <span class="bannerAbout-hold-text-detail">
+                            My vision is to encourage <span class="bannerAbout-hold-text-detail-child">creativity</span>, 
+                            and promote <span class="bannerAbout-hold-text-detail-child">individualism</span> through the celebration of <span class="bannerAbout-hold-text-detail-child">unconventional designs</span>.
+                            I create products that would be statement pieces defined by the labels unique, and helps  clients stand out from the crowd. 
+                            Not today reflects the notion that all pieces should be express who the wearer is and above all celebrate the artistic vision of the artist behind each garment.
+                            Trivial trends are erased in favour of visuals expresion of the brand. 
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fotterAbout grid wide">
+            <div class="fotterAbout-text">
+                <a href=/html/index.html class=fotterAbout-text-content>Explore Our Work</a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+    <script>
+        var closenewdetails = document.querySelector('.closenewdetails')
+        var closenewdetailsImg = document.querySelector('.closenewdetailsImg')
+        closenewdetails.addEventListener('mouseover',()=>{
+            closenewdetailsImg.src = '/images/Component 32 – 1.png'
+        })
+        closenewdetails.addEventListener('mouseout',()=>{
+            closenewdetailsImg.src = '/images/Group 25.png'
+        })
+    </script>
+</body>
+</html>

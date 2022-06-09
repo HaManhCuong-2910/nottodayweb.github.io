@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app" style="background-color: #fff;">
+        <div id="circularcursor"></div>
+        <div class="nav grid wide">
+            <a href="/html/index.html" class="closenewdetails navAbout-icon-active"><img class="closenewdetailsImg" src="/images/Group 25.png"></a>
+            <h1 class="nav-title"><a href="/html/about.html" class="nav-title-textWork">ABOUT</a></h1>
+        </div>
+        <div class="banner">
+            <div class="banner-holdWork" style="display: flex; justify-content: center; align-items: center;">
+                <img style="width: 300px; height: 150px; border: none;" class="banner-holdWork-img" src="/images/Group 27.png" alt="" srcset="">
+                <div class="bannernews-product" style="overflow-y: auto;">
+                    <a href="/html/news-detail-1.html"><img style="margin-left: 40%;" src="/images/Component 25 – 1.png" alt="" srcset=""></a>
+                    <a href="/html/news-detail-2.html"><img src="/images/Component 26 – 1.png" alt="" srcset=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+    <script>
+        var closenewdetails = document.querySelector('.closenewdetails')
+        var closenewdetailsImg = document.querySelector('.closenewdetailsImg')
+        closenewdetails.addEventListener('mouseover',()=>{
+            closenewdetailsImg.src = '/images/Component 32 – 1.png'
+        })
+        closenewdetails.addEventListener('mouseout',()=>{
+            closenewdetailsImg.src = '/images/Group 25.png'
+        })
+    </script>
+</body>
+</html>
