@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body">
+    <div class="app" style="background-color: #18184C;overflow-y: auto;">
+        <div id="circularcursor"></div>
+        <div class="nav grid wide">
+            <a href="/html/news.html" class="closenewdetails navAbout-icon-active"><img class="closenewdetailsImg" src="/images/Group 25.png"></a>
+            <h1 class="nav-title"><a href="/html/about.html" style="color: #fff;" class="nav-title-textWork">ABOUT</a></h1>
+        </div>
+        <div class="bannernewsDetail">
+            <div class="bannernewsDetail-title grid wide">
+                <h1 class="bannernewsDetail-title-text">Up Next Fashion Brands </h1>
+            </div>
+            <div class="bannernewsDetail-content grid wide">
+                <div class="row">
+                    <div class="bannernewsDetail-content-blocks1 col col-pc12">
+                        <div class="row">
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <img width="100%" src="/images/Screen Shot 2021-06-09 at 12.18.57 PM.jpg" alt="" srcset="">
+                                <a style="color: #fff; font-size: 1.6rem; margin-top: 10px;" href="https://www.christianstone.net/">https://www.christianstone.net/</a>
+                            </div>
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <h4 class="bannernewsDetail-content-descrip-title">Christian Stone</h4>
+                                <span class="bannernewsDetail-content-descrip-text">
+                                    Christian Stone CS1000 was admitted to
+                                    Central Saint Martins in 2013 and disguised as a human 
+                                    fashion student to learn about the craft of designing and making garments. 
+                                    The mission’s aim is to fully develop the set of knowledge and skills to create 
+                                    clothings that ultimately establishes mind control and generate mutations that 
+                                    allow individuals to surpass all human’s physical capabilities, making them harder, 
+                                    better, faster and stronger 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bannernewsDetail-content-blocks2 col col-pc12">
+                        <div class="row">
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <h4 class="bannernewsDetail-content-descrip-title">Haixi Ren</h4>
+                                <span class="bannernewsDetail-content-descrip-text">
+                                    Haixi Ren’s ultimate goal is to create personalized 
+                                    couture for her clients as opposed to wasteful mass produced clothing. 
+                                    Haixi developed techniques which allowed her to create garments using recycled 
+                                    swatches instead of yardage of fabrics.
+                                </span>
+                            </div>
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <img width="100%" src="/images/look_3.2_2.jpg" alt="" srcset="">
+                                <a style="color: #fff; font-size: 1.6rem; margin-top: 10px;" href="https://www.instagram.com/p/CKB7sN9hMQt/">https://www.instagram.com/p/CKB7sN9hMQt/</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 50px;" class="bannernewsDetail-content-blocks3 col col-pc12">
+                        <div class="row">
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <img width="100%" src="/images/Screen Shot 2021-06-09 at 12.14.39 PM.jpg" alt="" srcset="">
+                                <a style="color: #fff; font-size: 1.6rem; margin-top: 10px;" href="http://www.yentse.com/">http://www.yentse.com/</a>
+                            </div>
+                            <div class="bannernewsDetail-content-descrip col col-pc6">
+                                <h4 class="bannernewsDetail-content-descrip-title">yentse</h4>
+                                <span class="bannernewsDetail-content-descrip-text">
+                                    A Brand is influenced by the underground culture. 
+                                    Yentse is making use of innovative ways to breathe 
+                                    new life to ordinary garments with bold prints and shape.  
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+    <script>
+        var closenewdetails = document.querySelector('.closenewdetails')
+        var closenewdetailsImg = document.querySelector('.closenewdetailsImg')
+        closenewdetails.addEventListener('mouseover',()=>{
+            closenewdetailsImg.src = '/images/Component 32 – 1.png'
+        })
+        closenewdetails.addEventListener('mouseout',()=>{
+            closenewdetailsImg.src = '/images/Group 25.png'
+        })
+        var bannernewsDetailContentBlocks1 = document.querySelector('.bannernewsDetail-content-blocks1');
+        var bannernewsDetailContentBlocks2 = document.querySelector('.bannernewsDetail-content-blocks2');
+        var bannernewsDetailContentBlocks3 = document.querySelector('.bannernewsDetail-content-blocks3');
+        var app = document.querySelector('.app');
+        bannernewsDetailContentBlocks1.style.display = 'block';
+        
+        app.addEventListener('scroll',(e)=>{
+            var scrollY = e.target.scrollTop;
+            if(scrollY > 400){
+                bannernewsDetailContentBlocks2.style.opacity = '1';
+                bannernewsDetailContentBlocks2.style.animation = 'newdetail2animated linear 0.4s';
+            }
+            if(scrollY > 700){
+                bannernewsDetailContentBlocks3.style.opacity = '1';
+                bannernewsDetailContentBlocks3.style.animation = 'newdetail2animated linear 0.4s';
+            }
+    })
+    </script>
+</body>
+</html>

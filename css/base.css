@@ -1,0 +1,39 @@
+:root{
+    --nav-height: 80px;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Helvetica 25 UltraLight', sans-serif;
+    cursor: none;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes fadeout{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes toTop{
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: 0%;
+    }
+}

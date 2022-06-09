@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app" style="background-color: #18184C;">
+        <div id="circularcursor"></div>
+        <div class="nav grid wide">
+            <a href="/html/news.html" class="closenewdetails navAbout-icon-active"><img class="closenewdetailsImg" src="/images/Group 25.png"></a>
+            <h1 class="nav-title"><a href="/html/about.html" style="color: #fff;" class="nav-title-textWork">ABOUT</a></h1>
+        </div>
+        <div class="bannernewsDetail">
+            <div class="bannernewsDetail-title grid wide">
+                <h1 class="bannernewsDetail-title-text">BUTOH</h1>
+            </div>
+            <div class="bannernewsDetail-content grid wide">
+                <div class="row">
+                    <div class="bannernewsDetail-content-descrip col col-pc6">
+                        <span class="bannernewsDetail-content-descrip-text">
+                            Birthed in Japan nearly 60 years ago, butoh (boo-tow) dance has been mutating
+                            like crazy around the world, drawing on traditions like white body paint, 
+                            outlandish or nearly nonexistent costumes and “ugly” movements defying interpretation. 
+                            So the fast-and-dirty approach to butoh is simply to describe it. Like butoh artists, 
+                            butoh audiences must trust themselves when confronting the “empty” body. 
+                            Or, as Chicago butoh artist Sara Zalek puts it, “I compare butoh to figure drawing. 
+                            A good artist leaves open areas, because the mind can fill in what’s happening. 
+                            Butoh does that a lot: It allows people to fill in the gaps with their own memories and associations.”
+                        </span>
+                    </div>
+                    <div class="bannernewsDetail-content-descrip col col-pc6">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aTHTPBp842g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+    <script>
+        var closenewdetails = document.querySelector('.closenewdetails')
+        var closenewdetailsImg = document.querySelector('.closenewdetailsImg')
+        closenewdetails.addEventListener('mouseover',()=>{
+            closenewdetailsImg.src = '/images/Component 32 – 1.png'
+        })
+        closenewdetails.addEventListener('mouseout',()=>{
+            closenewdetailsImg.src = '/images/Group 25.png'
+        })
+    </script>
+</body>
+</html>
